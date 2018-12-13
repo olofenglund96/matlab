@@ -1,0 +1,14 @@
+hold off;
+a = 250e-6;
+b = 100e-6;
+L = 1;
+l = 539e-9;
+N = 1;
+x = linspace(-0.006, 0.006, 1000);
+alpha = pi*a*sin(tanh(x/L))/l;
+beta = pi*b*sin(tanh(x/L))/l;
+I = @(x, N) ((sin(beta)./beta).^2).*((sin(N*alpha)./sin(alpha)).^2);
+I0 = @(x, N) N.^2*(sin(beta)./beta).^2;
+%plot(x, I(x, 2), 'b');
+plot(x, I(x, 5), 'b');
+%plot(x, I0(x, 2), 'r');
