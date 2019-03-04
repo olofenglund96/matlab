@@ -1,4 +1,4 @@
-%% Const
+%% Constants
 c = 299792458;          % Speed of light
 h = 6.626068E-34;       % Plank's constant
 hbar = h/(2*pi);        % h bar
@@ -18,7 +18,6 @@ NA = 6.0221367E23;      % One mole
 a0 = 5.29177E-11;       % Bohr radius
 R = NA*KB;              % Gas constant
 ys = 365.2564*24*60*60; % Year in seconds
-
 Ri = 10973731.6;
 
 E_f = @(n, m) h^2*(3*n/(8*pi))^(2/3)/(2*m*e); % Fermi energy
@@ -26,6 +25,36 @@ E_f = @(n, m) h^2*(3*n/(8*pi))^(2/3)/(2*m*e); % Fermi energy
 lam_ph = @(E) h*c/(E*e); % Photon wave length
 lam_db = @(m, v) h/(m*v); % De Broglie wave length
 v = @(E, m) sqrt(2*E*e/m); % Velocity from kinetic energy
+
+FE = @(Ef, E, T) 1./(exp((E-Ef)./(KB.*T))+1);
+
+%% 9
+%a
+1/(exp(1)+1)
+%b
+1/(exp(-1)+1)
+%c
+log(1/0.99-1)*KB*77/eV
+
+%% 10
+%a
+t = 273;
+Ef = 1;
+E = linspace(0, 2);
+plot(FE(Ef, E, t), E);
+axis([0 2 0 2]);
+
+%% 14
+%a
+n = 4.7e28;
+Ef = h^2/(2*me)*(3*n/(8*pi))^(2/3)
+vf = sqrt(2*Ef/me)
+%b
+vth = sqrt(3*KB*300/me)
+%c
+vd = -100*1.05e7/(eV*n)
+%d
+l = vf*1.05e7*me/(eV^2*n)
 
 %% 24
 % a
@@ -38,7 +67,6 @@ kf = 2*pi/l
 ka = pi/2.09e-10
 
 % c Vad har braggspridning med något att göra?
-
 
 %% 25
 % a

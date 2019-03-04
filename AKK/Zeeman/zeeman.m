@@ -1,3 +1,4 @@
+%<<<<<<< HEAD
 %% Blue
 bcurrent = [2 2.5 3 3.5 4];
 btesla = bcurrent./10;
@@ -36,3 +37,17 @@ x = linspace(0, 1);
 plot(x, k*x, 'r');
 
 axis([0 0.4 0 0.4]);
+%=======
+rcurrent = [3 3.5 4];
+rtesla = rcurrent./10;
+bcurrent = [2 2.5 3 3.5 4];
+btesla = bcurrent./10;
+
+rsplitting = [0.187019695 0.197962734 0.339924823];
+bsplitting = [0.049665831 0.416597569 0.492447296 0.971438879 0.893799382];
+
+hold on;
+%plot(rtesla, rsplitting);
+plot(btesla, bsplitting);
+axis([0 .4 0 1]);
+%>>>>>>> Adding files from home computer
