@@ -71,12 +71,13 @@ ka = pi/2.09e-10
 %% 25
 % a
 a = 0.25e-9
-n =(1/(0.25e-9))
+n =(1/0.25e-9)
 n3 = 3*n
 n4 = 4*n
 %1D
-k3 = pi*n3/2
-k4 = pi*n4/2
-E3 = E_f(k3, me)
-E4 = E_f(k4, me)
+k = 2*pi*n/3
+E3 = E_f(n3, me)
+E4 = E_f(n4, me)
+E3 = ((hbar*pi)^2)*3*n/(2*me*e)
+E3 = (hbar*(3*pi/(2*a)))^2/(2*me*e)
 
