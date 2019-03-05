@@ -28,6 +28,8 @@ v = @(E, m) sqrt(2*E*e/m); % Velocity from kinetic energy
 
 FE = @(Ef, E, T) 1./(exp((E-Ef)./(KB.*T))+1);
 
+V = @(r) -e/(4*pi*ep0*r);
+
 %% 9
 %a
 1/(exp(1)+1)
@@ -80,3 +82,40 @@ k4 = pi*n4/2
 E3 = E_f(k3, me)
 E4 = E_f(k4, me)
 
+% b
+k31 = k3
+k32 = k3*2
+E31 = E_f(k31, me)
+E32 = E_f(k32, me)
+
+%% 26
+% a
+%kf as function of fermi energy
+2*sqrt(7e-19*2*me/hbar^2)
+%kf in 3D
+n_cu = 8.45e28;
+k = 2*(3*pi^2*n_cu)^(1/3) % rätt
+
+% b
+v = 3560;
+f = v*k
+E = hbar*f/e
+
+% c
+E_fermi = E_f(k/2, me)
+qu = E/E_fermi
+
+%% 27
+% a
+img = imread('FTF/Capture.PNG');
+hold on;
+imshow(img)
+Ef = -0.367;
+El = -0.22;
+del_E = El-Ef
+del_E_eV = 13.6*del_E
+refline(0, 254);
+line([183,183],[0,length(img)])
+refline(0, 192);
+
+% b
